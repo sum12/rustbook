@@ -1,9 +1,14 @@
 fn main() {
-    let a = String::from("input string");
+    let a = String::from("really input string");
     let s = getfirstwords(&a);
     println!("{}", s)
 }
 
 fn getfirstwords(a: &String) -> &str {
-    &a[..2]
+    for (i, &b) in a.as_bytes().iter().enumerate() {
+        if b == b' ' {
+            return &a[..i];
+        }
+    }
+    &a[..]
 }
