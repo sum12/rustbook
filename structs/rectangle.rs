@@ -12,6 +12,13 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
+
+    fn square(x: u32) -> Rectangle {
+        Rectangle {
+            width: x,
+            height: x,
+        }
+    }
 }
 
 fn main() {
@@ -31,4 +38,8 @@ fn main() {
 
     println!("Can r hold o : {}", r.can_hold(&o));
     println!("Can o hold r : {}", o.can_hold(&r));
+
+    let s = Rectangle::square(5);
+    println!("Rectangle with equal sides {:?}", s);
+    println!("Square s can hold reactangle o ? {}", s.can_hold(&o));
 }
