@@ -1,7 +1,15 @@
 fn main() {
-    let v = vec![1, 2, 3, 4, 5];
+    let mut v: Vec<i32> = Vec::new();
 
-    for i in v {
+    v.push(42);
+
+    for i in &v {
+        println!("{}", i * i);
+    }
+
+    for i in &v {
         println!("{}", i);
     }
+
+    println!("{}", v.len());
 }
