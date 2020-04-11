@@ -4,6 +4,7 @@ fn main() {
     v.push(42);
 
     for i in &v {
+        //v.push(i * i); // &v is a immutable borrow, passing refs are borrow
         println!("{}", i * i);
     }
 
